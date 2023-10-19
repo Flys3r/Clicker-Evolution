@@ -19,22 +19,16 @@ const boutonChangerEpoque = document.getElementById("changeEra");
 
 // Ajoute un gestionnaire d'événements pour le clic
 boutonCookie.addEventListener("click", () => {
-    // Ajoute le bonus de clic au nombre d'ADN
     nbADN += bonusClic;
-    // Met à jour le texte du compteur d'ADN
     elemNbADN.textContent = nbADN;
 });
 // Bonus de clicks
 boutonAcheterBonusClic.addEventListener("click", () => {
     // Vérifiez si tu as suffisamment d'ADN pour acheter un bonus de clic
     if (nbADN >= prixBonusClic) {
-        // Déduit le coût du bonus de clic
         nbADN -= prixBonusClic;
-        // Augmente le nombre de points par clic
         bonusClic++;
-        // Augmente le prix du bonus de clic
         prixBonusClic *= 2;
-        // Met à jour le texte des compteurs et du prix
         elemNbADN.textContent = nbADN;
         elemBonusClic.textContent = bonusClic;
         elemPrixBonusClic.textContent = prixBonusClic;
@@ -46,17 +40,14 @@ boutonAcheterBonusClic.addEventListener("click", () => {
 // Auto-clicker
 boutonAcheterAutoClicker.addEventListener("click", () => {
     if (nbADN >= prixAutoClicker) {
-        // Déduit le coût de l'auto-clicker
         nbADN -= prixAutoClicker;
-        // Augmente le nombre d'auto-clickers
         nbAutoClickers++;
-        // Augmente le prix de l'auto-clicker pour le prochain achat
         prixAutoClicker *= 2;
         // Met à jour le texte des compteurs et du prix
         elemNbADN.textContent = nbADN;
         elemNbAutoClickers.textContent = nbAutoClickers;
         elemPrixAutoClicker.textContent = prixAutoClicker;
-        // Démarre l'autoclicker
+
         demarrerAutoClicker();
     } else {
         alert("Tu n'as pas suffisamment d'ADN pour acheter un auto-clicker !");
@@ -79,6 +70,18 @@ const epoques = [
     {
         bouton: "image/renaissance.png",
         arrierePlan: "image/renaissance.jpg"
+    },
+    {
+        bouton: "image/1800.png",
+        arrierePlan: "image/1801.png"
+    },
+    {
+        bouton: "image/1900.png",
+        arrierePlan: "image/1900.jpg"
+    },
+    {
+        bouton: "image/maintenant.png",
+        arrierePlan: "image/maintenant.jpg"
     }
 ]
 
@@ -92,7 +95,7 @@ boutonChangerEpoque.addEventListener("click", () => {
         boutonCookie.innerHTML = '<img src="' + currentEpoque.bouton + '" alt="Cookie">';
         document.body.style.backgroundImage = 'url("' + currentEpoque.arrierePlan + '")';
         epoque++;
-        // Met à jour le compteur d'ADN et le prix affiché
+
         elemNbADN.textContent = nbADN;
         eraChangeCost.textContent = coutChangementEpoque;
     }
@@ -105,10 +108,8 @@ let intervalAutoClicker;
 function demarrerAutoClicker() {
     if (!intervalAutoClicker) {
         intervalAutoClicker = setInterval(() => {
-            // Ajoute le bonus de clic au nombre d'ADN
             nbADN += bonusClic;
 
-            // Met à jour le texte du compteur d'ADN
             elemNbADN.textContent = nbADN;
         }, 1000); // 1000ms (1 seconde) par clic
     }
@@ -128,7 +129,7 @@ function afficherBonusADN() {
 
 // Ajout d'un gestionnaire d'événements pour cliquer sur l'image bonus d'ADN
 bonusADN.addEventListener("click", () => {
-    nbADN += 10;
+    nbADN += 100000000;
     elemNbADN.textContent = nbADN;
     bonusADN.style.display = "none";
 });

@@ -5,14 +5,16 @@ body {
     background-image: url('../image/fonddinosaure.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;/
+    background-attachment: fixed;
+    width: auto;
+    height: auto;
 }
 
 .container {
     background-color: rgba(255, 255, 255, 0.685);
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.97);
     position: relative;
     left: 40%;
@@ -23,13 +25,13 @@ body {
 .containers {
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .button {
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 1%;
 }
 
 h1 {
