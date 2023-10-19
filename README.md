@@ -1,6 +1,6 @@
 # Clicker-Evolution
 
-Le Jeu Cookie Clicker est un jeu de clics basé sur le web qui vous permet de gagner des ADN (ADN) en cliquant sur un cookie et en achetant des améliorations. Vous pouvez également changer d'époques et explorer différents arrière-plans au fur et à mesure de votre progression dans le jeu.
+Le Jeu Clicker-Evolution est un jeu de clics basé sur le web qui vous permet de gagner des ADN (ADN) en cliquant sur un cookie et en achetant des améliorations. Vous pouvez également changer d'époques et explorer différents arrière-plans au fur et à mesure de votre progression dans le jeu.
 
 
 Fonctionnalités
