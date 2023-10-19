@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif, ;
+    margin: 0;
+    padding: 0;
+    background-image: url('../image/fonddinosaure.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;/
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.685);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.97);
+    position: relative;
+    left: 40%;
+    width: 20%;
+    border-radius: 5px;
+}
+
+.containers {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.button {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+span {
+    font-weight: bold;
+    color: rgb(39, 172, 75);
+}
+
+.cookie-button {
+    padding: 0;
+    border: 1px;
+    background: none;
+    cursor: pointer;
+}
+
+.cookie-button img {
+    width: 250px;
+    height: auto;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.669);
+    color: #000000;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.bonus {
+    width: 10%;
+
+}
