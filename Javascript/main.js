@@ -63,65 +63,41 @@ boutonAcheterAutoClicker.addEventListener("click", () => {
     }
 });
 
-// Changer d'époque
+const epoques = [
+    {
+        bouton: "image/préhistoire.png",
+        arrierePlan: "image/préhistoire.jpg"
+    },
+    {
+        bouton: "image/antiquité.png",
+        arrierePlan: "image/antiquité.jpg"
+    },
+    {
+        bouton: "image/m-a.png",
+        arrierePlan: "image/m-a.jpg"
+    },
+    {
+        bouton: "image/renaissance.png",
+        arrierePlan: "image/renaissance.jpg"
+    }
+]
+
 boutonChangerEpoque.addEventListener("click", () => {
-    if (epoque === 0) {
-        if (nbADN >= coutChangementEpoque) {
-            // Vérifiez si il y a suffisamment d'ADN pour changer d'époque
-            nbADN -= coutChangementEpoque;
-            coutChangementEpoque *= 2; // Augmente le coût du changement d'époque
+    if (nbADN >= coutChangementEpoque) {
+        currentEpoque = epoques[epoque];
 
-            // Met à jour l'apparence de l'image et de l'arrière-plan
-            boutonCookie.innerHTML = '<img src="image/préhistoire.png" alt="Cookie">';
-            document.body.style.backgroundImage = 'url("image/préhistoire.jpg")';
-            epoque = 1;
-        } else {
-            alert("Tu n'as pas suffisamment d'ADN pour changer d'époque !");
-        }
-    } else if (epoque === 1) {
-        // Autre époque
-        if (nbADN >= coutChangementEpoque) {
+        nbADN -= coutChangementEpoque;
+        coutChangementEpoque *= 2;
 
-            nbADN -= coutChangementEpoque;
-            coutChangementEpoque *= 2;
-
-            boutonCookie.innerHTML = '<img src="image/antiquité.png" alt="Cookie">';
-            document.body.style.backgroundImage = 'url("image/antiquité.jpg")';
-            epoque = 2;// Change l'époque à autre époque
-        } else {
-            alert("Tu n'as pas suffisamment d'ADN pour changer d'époque !");
-        }
+        boutonCookie.innerHTML = '<img src="' + currentEpoque.bouton + '" alt="Cookie">';
+        document.body.style.backgroundImage = 'url("' + currentEpoque.arrierePlan + '")';
+        epoque++;
+        // Met à jour le compteur d'ADN et le prix affiché
+        elemNbADN.textContent = nbADN;
+        eraChangeCost.textContent = coutChangementEpoque;
     }
-    else if (epoque === 2) {
-        if (nbADN >= coutChangementEpoque) {
-
-            nbADN -= coutChangementEpoque;
-            coutChangementEpoque *= 2;
-
-            boutonCookie.innerHTML = '<img src="image/m-a.png" alt="Cookie">';
-            document.body.style.backgroundImage = 'url("image/m-a.jpg")';
-            epoque = 3;
-        } else {
-            alert("Tu n'as pas suffisamment d'ADN pour changer d'époque !");
-        }
-    }
-    else if (epoque === 3) {
-        if (nbADN >= coutChangementEpoque) {
-
-            nbADN -= coutChangementEpoque;
-            coutChangementEpoque *= 2;
-
-            boutonCookie.innerHTML = '<img src="image/renaissance.png" alt="Cookie">';
-            document.body.style.backgroundImage = 'url("image/renaissance.jpg")';
-            epoque = 4;
-        } else {
-            alert("Tu n'as pas suffisamment d'ADN pour changer d'époque !");
-        }
-    }
-    // Met à jour le compteur d'ADN et le prix affiché
-    elemNbADN.textContent = nbADN;
-    eraChangeCost.textContent = coutChangementEpoque;
 });
+
 
 // Fonction pour gérer l'autoclicker
 let intervalAutoClicker;
