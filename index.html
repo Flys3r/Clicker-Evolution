@@ -54,10 +54,9 @@
             // Met à jour le texte du compteur d'ADN
             elemNbADN.textContent = nbADN;
         });
-
-        // Ajoute un gestionnaire d'événements pour acheter un bonus de clic
+         // Bonus de clicks
         boutonAcheterBonusClic.addEventListener("click", () => {
-            // Vérifiez si l'étudiant a suffisamment d'ADN pour acheter un bonus de clic
+            // Vérifiez si tu as suffisamment d'ADN pour acheter un bonus de clic
             if (nbADN >= prixBonusClic) {
                 // Déduit le coût du bonus de clic
                 nbADN -= prixBonusClic;
@@ -74,7 +73,7 @@
             }
         });
 
-        // Ajoute un gestionnaire d'événements pour acheter un auto-clicker
+        // Auto-clicker
         boutonAcheterAutoClicker.addEventListener("click", () => {
             // Vérifiez si l'étudiant a suffisamment d'ADN pour acheter un auto-clicker
             if (nbADN >= prixAutoClicker) {
@@ -95,16 +94,15 @@
             }
         });
 
-        // Ajoute un gestionnaire d'événements pour changer d'époque
+        // Changer d'époque
         boutonChangerEpoque.addEventListener("click", () => {
             if (epoque === 0) {
-                // Époque des Dinosaures
                 if (nbADN >= coutChangementEpoque) {
                     // Vérifiez si il y a suffisamment d'ADN pour changer d'époque
                     nbADN -= coutChangementEpoque;
                     coutChangementEpoque *= 2; // Augmente le coût du changement d'époque
 
-                    // Met à jour l'apparence de l'image du Cookie et de l'arrière-plan
+                    // Met à jour l'apparence de l'image et de l'arrière-plan
                     boutonCookie.innerHTML = '<img src="image/préhistoire.png" alt="Cookie">';
                     document.body.style.backgroundImage = 'url("image/préhistoire.jpg")';
                     epoque = 1;
@@ -118,7 +116,6 @@
                     nbADN -= coutChangementEpoque;
                     coutChangementEpoque *= 2;
 
-
                     boutonCookie.innerHTML = '<img src="image/antiquité.png" alt="Cookie">';
                     document.body.style.backgroundImage = 'url("image/antiquité.jpg")';
                     epoque = 2;
@@ -127,13 +124,11 @@
                 }
             }
             else if (epoque === 2) {
-                // Autre époque
                 if (nbADN >= coutChangementEpoque) {
-                    // Vérifiez si l'étudiant a suffisamment d'ADN pour changer d'époque
+                 
                     nbADN -= coutChangementEpoque;
-                    coutChangementEpoque *= 2; // Augmente le coût du changement d'époque
+                    coutChangementEpoque *= 2; 
 
-                    // Met à jour l'apparence de l'image du Cookie et de l'arrière-plan
                     boutonCookie.innerHTML = '<img src="image/m-a.png" alt="Cookie">';
                     document.body.style.backgroundImage = 'url("image/m-a.jpg")';
                     epoque = 3; // Change l'époque à autre époque
@@ -142,13 +137,11 @@
                 }
             }
             else if (epoque === 3) {
-                // Autre époque
                 if (nbADN >= coutChangementEpoque) {
-                    // Vérifiez si l'étudiant a suffisamment d'ADN pour changer d'époque
+                   
                     nbADN -= coutChangementEpoque;
                     coutChangementEpoque *= 2; // Augmente le coût du changement d'époque
 
-                    // Met à jour l'apparence de l'image du Cookie et de l'arrière-plan
                     boutonCookie.innerHTML = '<img src="image/renaissance.png" alt="Cookie">';
                     document.body.style.backgroundImage = 'url("image/renaissance.jpg")';
                     epoque = 4; // Change l'époque à autre époque
@@ -176,7 +169,7 @@
             }
         }
 
-        // Gestion de l'image bonus d'ADN
+        // Gestion de l'image bonus qui pop sur la page
         const bonusADN = document.getElementById("bonusADN");
 
         // Fonction pour afficher l'image bonus d'ADN
@@ -190,12 +183,11 @@
 
         // Ajout d'un gestionnaire d'événements pour cliquer sur l'image bonus d'ADN
         bonusADN.addEventListener("click", () => {
-            nbADN += 10; // Augmenter le nombre d'ADN lorsque l'image bonus d'ADN est cliquée
-            elemNbADN.textContent = nbADN; // Mettre à jour l'affichage du nombre d'ADN
-            bonusADN.style.display = "none"; // Cacher l'image bonus d'ADN
+            nbADN += 10; 
+            elemNbADN.textContent = nbADN;
+            bonusADN.style.display = "none";
         });
 
-        // Afficher périodiquement l'image bonus d'ADN
         setInterval(afficherBonusADN, 5000);
 
     </script>
